@@ -4,11 +4,13 @@
   {% load django_bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
-  <form action="" method='POST'>
-    {% csrf_token %}
-    {% bootstrap_form review_form %}
-    {% bootstrap_button content='글쓰기' button_type='submit' button_class="btn-primary" %}
 
-  </form>
-
+  <div class="text-white">
+    <h2 class="my-4 fw-bold">글 작성하기</h2>
+    <form action="" method='POST'>
+      {% csrf_token %}
+      {% bootstrap_form review_form %}
+      {% bootstrap_button content='글쓰기' button_type='submit' button_class="btn-primary" %}
+    </form>
+  </div>
 {% endblock %}

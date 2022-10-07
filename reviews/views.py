@@ -4,6 +4,9 @@ from .models import Review
 
 # Create your views here.
 
+def main(request):
+    return render(request, 'reviews/main.html')
+
 def index(request):
     reviews = Review.objects.order_by('-pk')
     context = {

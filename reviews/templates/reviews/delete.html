@@ -4,15 +4,19 @@
   {% load django_bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
-  <a href="{% url 'reviews:index'%}">
-    <button class="btn btn-primary">
-      돌아가기
-    </button>
-  </a>
-  <form action="" method='POST'>
-    {% csrf_token %}
-    {% bootstrap_button content='삭제하기' button_type='submit' button_class="btn-primary" %}
 
-  </form>
+  <div class="text-center text-white d-flex justify-content-center flex-column my-5">
+    <h1 class="fw-bold mb-4">정말 삭제하시겠습니까?</h1>
+    <!-- 버튼 박스 -->
+    <div class="d-flex justify-content-center">
+      <a href="{% url 'reviews:index'%}" class="btn btn-outline-warning">
+        돌아가기
+      </a>
+      <form class="mx-3" action="" method='POST'>
+        {% csrf_token %}
+        {% bootstrap_button content='삭제하기' button_type='submit' button_class="btn-danger" %}
+      </form>
+    </div>
+  </div>
 
 {% endblock %}
