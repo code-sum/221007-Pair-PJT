@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>하이</h1>
+  <a class='btn btn-primary' href='{% url 'reviews:create' %}'>
+    버튼
+  </a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">제목</th>
+        <th scope="col">영화제목</th>
+        <th scope="col">평점</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+        <tr>
+          <th scope="row">{{ forloop.revcounter }}</th>
+          <td>{{ review.title}}</td>
+          <td>{{ review.movie_name }}</td>
+          <td>{{ review.grade }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock %}
