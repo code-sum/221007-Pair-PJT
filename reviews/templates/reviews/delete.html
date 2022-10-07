@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <a href="{% url 'reviews:index'%}">
+    <button class="btn btn-primary">
+      돌아가기
+    </button>
+  </a>
+  <form action="" method='POST'>
+    {% csrf_token %}
+    {% bootstrap_button content='삭제하기' button_type='submit' button_class="btn-primary" %}
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>{{ review.title }}</h3>
+  <h5>{{ review.content}}</h5>
+  <h5>{{ review.movie_name}}</h5>
+  <h5>{{ review.grade}}</h5>
+  <h5>{{ review.created_at}}</h5>
+  <h5>{{ review.updated_at}}</h5>
+  <button>
+    <a href="{% url 'reviews:update' review.pk%}">
+      수정
+    </a>
+  </button>
+  <button>
+    <a href="{% url 'reviews:delete' review.pk%}">
+      삭제
+    </a>
+  </button>
+
+{% endblock %}
